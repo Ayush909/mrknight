@@ -1,5 +1,6 @@
 import chalk from "chalk";
 import { select, isCancel } from "@clack/prompts";
+import { runAgentMode } from "./agent/orchestrator";
 
 // available cli modes
 const cliModeOpts = [
@@ -33,6 +34,7 @@ export async function runCliMode() {
     }
 
     if (mode === "agent") {
+      await runAgentMode();
     } else if (mode === "plan") {
     } else if (mode === "ask") {
     }
